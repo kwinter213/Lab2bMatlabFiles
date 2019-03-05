@@ -1,0 +1,13 @@
+%%SVD main              Kimberly Winter
+%3/5/19
+
+%must be run after main4Channel.m to receive a proper H
+
+%perfo
+[U,S,V]=svd(H);
+Vdagger=inv(V);
+
+message2sendCSI=toSend2(bufferSize, message, V);
+
+receivedMsgSVD=MIMOChannel4x4(toSend);
+
